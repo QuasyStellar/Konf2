@@ -1,0 +1,7 @@
+{
+  "visualization_program_path": "C:/Users/q/Downloads/plantuml.jar",
+  "package_name": "express",
+  "output_file": "dependencies.puml",
+  "max_depth": 3
+}
+
