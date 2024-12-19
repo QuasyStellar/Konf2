@@ -51,12 +51,13 @@ def extract_dependencies(dependencies):
 def generate_plantuml(dependencies):
     """Генерирует код PlantUML для визуализации графа зависимостей"""
     plantuml_code = "@startuml\n"
+    plantuml_code += "skinparam linetype ortho\n"  # Используем ортогональные линии для лучшей структуры
+
     if not dependencies:
         plantuml_code += "    // Нет зависимостей для отображения\n"
     else:
         for dep, sub_deps in dependencies.items():
             for sub_dep in sub_deps:
-                # Используем кавычки для правильной обработки имен с "@"
                 plantuml_code += f'    "{dep}" --> "{sub_dep}"\n'
     plantuml_code += "@enduml"
     return plantuml_code
